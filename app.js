@@ -8,7 +8,3 @@ function Book(title, author, pages, read) {
 Book.prototype.info = function() {
   return `${this.title} by ${this.author}, ${this.pages} pages, read: ${this.read}`
 }
-
-const testBook = new Book('Mein Kampf', 'Hitler', 88, false)
-
-console.log(testBook.info());
