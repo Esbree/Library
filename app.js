@@ -1,34 +1,24 @@
 let myLibrary = []
 
-function Book(title, author, pages, read) {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.read = read
+function Book() {
+  
 }
 
-Book.prototype.info = function() {
-  return `${this.title} by ${this.author}, ${this.pages} pages, read: ${this.read}`
+
+function addBookToLibrary() {
+  
 }
 
-const titleInput = document.getElementById('title')
-const authorInput = document.getElementById('author')
-const pagesInput = document.getElementById('pages')
-const readInput = document.getElementById('read')
-const submitButton = document.getElementById('btn-submit')
+const addBtn = document.querySelector('.btn-add')
+const modalContainer = document.querySelector('.modal-container')
+const modalCloseBtn = document.querySelector('.modal-confirm-btn')
 
-function addBookToLibrary(title, author, pages, read) {
-  title = titleInput.value
-  author = authorInput.value
-  pages = pagesInput.value
-  read = readInput.checked
-
-  const book = new Book(title, author, pages, read)
-
-  myLibrary.push(book)
-  console.log(myLibrary);
-}
-
-submitButton.addEventListener('click', function() {
-  addBookToLibrary()
+addBtn.addEventListener('click', function() {
+  modalContainer.classList.add('show')
 })
+
+modalCloseBtn.addEventListener('click', function() {
+  modalContainer.classList.remove('show')
+})
+
+// create addBookToLibrary function -> click on OK button
