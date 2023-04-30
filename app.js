@@ -14,7 +14,18 @@ function addBookToLibrary() {
   let pages = document.querySelector('#pages').value
   let read = document.querySelector('#read').checked
   let newBook = new Book(title, author, pages, read)
-  console.log(newBook)
+  myLibrary.push(newBook)
+  render()
+}
+
+function render() {
+  const grid = document.querySelector('.card-grid')
+  const heading = document.createElement('p')
+
+  for (let i = 0; i < myLibrary.length; i++) {
+    heading.textContent = myLibrary[i].title
+    grid.appendChild(heading)
+  }
 }
 
 // add button - pop up modal
