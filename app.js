@@ -8,7 +8,6 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-<<<<<<< HEAD
   let title = document.querySelector('#title').value;
   let author = document.querySelector('#author').value;
   let pages = document.querySelector('#pages').value;
@@ -29,25 +28,6 @@ function addBookToLibrary() {
 function render() {
   // render books on the grid
   const grid = document.querySelector('.card-grid');
-=======
-  let title = document.querySelector('#title').value
-  let author = document.querySelector('#author').value
-  let pages = document.querySelector('#pages').value
-  let read = document.querySelector('#read').checked
-  let newBook = new Book(title, author, pages, read)
-  myLibrary.push(newBook)
-  render()
-}
-
-function render() {
-  const grid = document.querySelector('.card-grid')
-  const heading = document.createElement('p')
-
-  for (let i = 0; i < myLibrary.length; i++) {
-    heading.textContent = myLibrary[i].title
-    grid.appendChild(heading)
-  }
->>>>>>> 8cb6b0c74271afdbf5ddc564f37f1eeadd229352
 }
 
 // add button - pop up modal
