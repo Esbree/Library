@@ -41,6 +41,9 @@ function render() {
         <h3>${book.pages} pages</h3>
         <h3>${book.read ? 'Read' : 'Not read'}</h3>
       </div>
+      <div class='delete-button'>
+        <button>delete</button>
+      </div>
       `;
     grid.appendChild(bookEl);
   }

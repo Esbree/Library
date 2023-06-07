@@ -73,17 +73,29 @@ body {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
 
 .card-grid > div {
   background-color: rgb(241, 241, 241);
   padding: 16px;
   text-align: center;
+  border-radius: 12px;
 }
 
 .card-header > h3,
 .card-body > h3 {
   margin: 5px;
+}
+
+.delete-button > button {
+  background-color: #0891b2;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  height: 30px;
+  width: 100px;
 }
 
 .modal-container {
