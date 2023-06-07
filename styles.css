@@ -62,7 +62,7 @@ body {
 .btn-add:hover {
   cursor: pointer;
   background-color: #0ba4ca;
-  transition: .4s; 
+  transition: 0.4s;
 }
 
 .card-grid {
@@ -73,6 +73,17 @@ body {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
+}
+
+.card-grid > div {
+  background-color: rgb(241, 241, 241);
+  padding: 16px;
+  text-align: center;
+}
+
+.card-header > h3,
+.card-body > h3 {
+  margin: 5px;
 }
 
 .modal-container {
@@ -135,5 +146,5 @@ body {
 #submit:hover {
   cursor: pointer;
   background-color: #0ba4ca;
-  transition: .4s;
+  transition: 0.4s;
 }
