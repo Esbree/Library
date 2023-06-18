@@ -28,6 +28,22 @@ function addBookToLibrary() {
 function render() {
   // render books on the grid
   const grid = document.querySelector('.card-grid');
+  let bookEl;
+
+  for (let i = 0; i < myLibrary.length; i++) {
+    let book = myLibrary[i];
+    bookEl = document.createElement('div');
+    bookEl.innerHTML = `
+      <div>
+        <p>${book.title}</p>
+        <p>by ${book.author}</p>
+        <p>${book.pages} pages</p>
+        <p>read: ${book.read}</p>
+      </div>
+      `;
+  }
+
+  grid.appendChild(bookEl);
 }
 
 // add button - pop up modal
