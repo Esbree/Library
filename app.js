@@ -25,6 +25,11 @@ function addBookToLibrary() {
   render();
 }
 
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  render();
+}
+
 function render() {
   // render books on the grid
   const grid = document.querySelector('.card-grid');
@@ -42,7 +47,7 @@ function render() {
         <h3>${book.read ? 'Read' : 'Not read'}</h3>
       </div>
       <div class='delete-button'>
-        <button>delete</button>
+        <button class='btn-delete' onclick='removeBook(${i})'>delete</button>
       </div>
       `;
     grid.appendChild(bookEl);
