@@ -49,6 +49,9 @@ function render() {
       <div class='delete-button'>
         <button class='btn-delete' onclick='removeBook(${i})'>delete</button>
       </div>
+      <div class='status-button'>
+        <button>status</button>
+      </div>
       `;
     grid.appendChild(bookEl);
   }
