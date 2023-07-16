@@ -7,6 +7,15 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
+
+function toggleRead(index) {
+  myLibrary[index].toggleRead();
+  render();
+}
+
 function addBookToLibrary() {
   let title = document.querySelector('#title').value;
   let author = document.querySelector('#author').value;
@@ -49,7 +58,7 @@ function render() {
       <div class='delete-button'>
         <button class='btn-delete' onclick='removeBook(${i})'>delete</button>
       </div>
-      <div class='status-button'>
+      <div class='status-button' onclick='toggleRead(${i})'>
         <button>status</button>
       </div>
       `;
