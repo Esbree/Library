@@ -17,12 +17,20 @@ function toggleRead(index) {
 }
 
 function addBookToLibrary() {
-  let title = document.querySelector('#title').value;
-  let author = document.querySelector('#author').value;
-  let pages = document.querySelector('#pages').value;
+  let title = document.querySelector('#title').value.trim();
+  let author = document.querySelector('#author').value.trim();
+  let pages = document.querySelector('#pages').value.trim();
   let read = document.querySelector('#read').checked;
+
+  // Check if required fields are empty
+  if (title === '' || author === '' || pages === '') {
+    alert('Please fill out all required fields.');
+    return; // Exit the function without adding the book
+  }
+
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
+
   function closeModal() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
@@ -30,6 +38,7 @@ function addBookToLibrary() {
     document.querySelector('#read').checked = false;
     modalContainer.classList.remove('show');
   }
+
   closeModal();
   render();
 }
@@ -77,7 +86,7 @@ addBtn.addEventListener('click', function () {
 // submit button
 const submitbtn = document.querySelector('#submit');
 
-submitbtn.addEventListener('click', function () {
+submitbtn.addEventListener('click', function (event) {
   event.preventDefault();
   addBookToLibrary();
 });
